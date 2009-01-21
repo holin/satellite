@@ -28,6 +28,8 @@ class GitDb
   def sync
     repo.pull
     repo.push
+  rescue Exception => e
+    logger.warn e.inspect
   end
 
   def push
