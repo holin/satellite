@@ -14,5 +14,3 @@ config.log_level = :error
 config.auto_reload = true
 
 config.server_port = 8888
-
-VALID_FILENAME_CHARS = '.'
