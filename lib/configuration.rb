@@ -47,7 +47,7 @@ class Configuration
     # defaults values
     self.app_name               = 'Satellite'
     self.server_ip              = '0.0.0.0'
-    self.server_port            = 3000
+    self.server_port            = 8888
     self.master_repository_uri  = ''
     self.user_name              = ''
     self.user_email             = ''
