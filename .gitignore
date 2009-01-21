@@ -2,3 +2,6 @@ data
 doc/generated
 log
 tmp
+conf/production.rb
+.DS_Store
+
