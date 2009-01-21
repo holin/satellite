@@ -1,7 +1,7 @@
 # production configuration
 
 # URI of master git repository for wiki content
-config.master_repository_uri = 'ssh://devony@toadstool.dreamhost.com/home/devony/git/pkm.git'
+config.master_repository_uri = 'ssh://jack@xyz.dreamhost.com/home/devony/git/pkm.git'
 
 # user information to use for git content submissions
 config.user_name = 'Devon'
