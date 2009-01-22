@@ -1,4 +1,5 @@
 <%= @partial.call :cancel_hotkeys, { :redirect_uri => @cancel_uri } %>
+<%= @partial.call :submit_hotkeys %>
 
 <form action="<%= @uri.page(@page.name) %>" method="post">
   <input type="hidden" name="return_to" value="<%= @referrer %>" />
