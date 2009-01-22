@@ -4,7 +4,7 @@
 <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 <meta http-equiv="Content-Language" content="en-us" />
 
-<title><%= @title %> - Satellite</title>
+<title><%= @title %> - <%= @conf.app_name %></title>
 
 <link type="text/css" href="<%= @uri.static('screen.css') %>" media="screen, projection" rel="stylesheet"/>
 <link type="text/css" href="<%= @uri.static('print.css') %>" media="print" rel="stylesheet"/>
@@ -63,7 +63,7 @@
 <body>
   <div id="wrapper">
     <div id="header">
-      <h1><a href="/"><span>Satellite</span></a></h1>
+      <h1><a href="/"><span><%= @conf.app_name %></span></a></h1>
     </div>
 
     <div id="content-box">
