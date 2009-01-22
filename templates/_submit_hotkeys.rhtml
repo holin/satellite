@@ -1,5 +1,9 @@
 <script type="text/javascript">
-  localOnload = function() {
-	jQuery.hotkeys.add('command+s', { target: jQuery("#content")[0] }, function(){jQuery('button:submit').click()})
-  };
+jQuery(document).ready(function(){ 
+	jQuery.hotkeys.add('command+s', { target: jQuery("#content")[0] }, function(){jQuery('button:submit').click()});
+	try {
+		jQuery("#content")[0].focus();
+		jQuery("#name")[0].focus();
+	} catch(e) {}
+});
 </script>
