@@ -5,7 +5,8 @@
 
 %w{ configuration pico git_db rubygems metaid redcloth open-uri erubis coderay }.each {|l| require l }
 
-VALID_FILENAME_CHARS = '\w \!\@\#\$\%\^\&\(\)\-\_\+\=\[\]\{\}\,\.'
+# VALID_FILENAME_CHARS = '\w \!\@\#\$\%\^\&\(\)\-\_\+\=\[\]\{\}\,\.'
+VALID_FILENAME_CHARS = '^\}'
 
 require 'wiki_markup'
 
