@@ -1,4 +1,5 @@
 require 'rubygems'
+gem 'rack', '=0.4'
 require 'rack'
 require 'logger'
 require 'erubis'
