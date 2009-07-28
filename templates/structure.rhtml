@@ -16,7 +16,7 @@
 
 <script type="text/javascript" src="<%= @uri.static('lib/jquery-1.2.6.min.js') %>"></script>
 <script type="text/javascript" src="<%= @uri.static('lib/jquery.hotkeys.js') %>"></script>
-<script type="text/javascript" src="<%= @uri.static('lib/jquery-autocomplete/jquery.autocomplete.min.js') %>"></script>
+<script type="text/javascript" src="<%= @uri.static('lib/jquery.gotofile.js') %>"></script>
 
 <script type="text/javascript">
   localOnload = function() {}; // placeholder for page-specific logic -- override in each page
@@ -45,16 +45,22 @@
     hotkey('g', focus("goto"));
 
     // page data for autocomplete
-    var data = [ <%= @pages.collect {|p| "{ name: '#{p.name}', url: '#{@uri.page(p.name)}' }" }.join(', ') %> ];
-
-    // goto autocomplete box
-    $("#goto").autocomplete(data, {
-      formatItem: function(page) {
-        return page.name;
-      }
-    }).result(function(event, page) {
-      location.href = page.url;
-    });
+    var data = { <%= @pages.collect {|p| "'#{p.name}' : '#{@uri.page(p.name)}' " }.join(', ') %> };
+	var pages = [<%= @pages.collect {|p| "'#{p.name}'" }.join(', ') %>];
+	
+	$("#goto").gotofileArray(pages, {selectFirst: true, 
+		autoFill: false,
+		onItemSelect: function(page) {
+		location.href = data[page.innerHTML];
+	}});
+	// goto autocomplete box
+	// $("#goto").gotofile(null, {
+	// 	formatItem: function(page) {
+	// 		return page.name;
+	// 	}
+	// }, data).result(function(event, page) {
+	// 	location.href = page.url;
+	// });
 
   });
 </script>
